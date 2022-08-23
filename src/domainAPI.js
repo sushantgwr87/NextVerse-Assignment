@@ -4,6 +4,8 @@ let { REACT_APP_PUBLIC_API_URL } = process.env;
 
 const apiUrl = REACT_APP_PUBLIC_API_URL;
 
+console.log(apiUrl)
+
 const domainurl = axios.create({
   baseURL: apiUrl,
   headers: {
