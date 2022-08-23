@@ -42,12 +42,11 @@ const Navbar = () => {
                 document.getElementById("post_cont").style.marginLeft = "300px";
                 // document.getElementById("post_box").style.transform = "scale(0.5)";
             }
-
-            else {
-                // document.getElementById("nav_menu").style.width = "0";
-                document.getElementById("post_cont").style.marginLeft = "0";
-                // document.getElementById("post_box").style.transform = "scale(1)";
-            }
+        }
+        else {
+            // document.getElementById("nav_menu").style.width = "0";
+            document.getElementById("post_cont").style.marginLeft = "0";
+            // document.getElementById("post_box").style.transform = "scale(1)";
         }
     }, [isXl])
 
