@@ -10,7 +10,7 @@ import { CgProfile, CgLink } from "react-icons/cg"
 import { AiOutlineInfoCircle, AiOutlineCopyrightCircle } from "react-icons/ai"
 
 const Navbar = () => {
-    const { isMd } = useBreakpoints();
+    const { isXl } = useBreakpoints();
 
     const [showSidebar, setShowSidebar] = useState(false);
 
@@ -36,18 +36,20 @@ const Navbar = () => {
     }, [showSidebar]);
 
     useEffect(() => {
-        if (showSidebar) {
-            // document.getElementById("nav_menu").style.width = "300px";
-            document.getElementById("post_cont").style.marginLeft = "300px";
-            // document.getElementById("post_box").style.transform = "scale(0.5)";
+        if (isXl === false) {
+            if (showSidebar) {
+                // document.getElementById("nav_menu").style.width = "300px";
+                document.getElementById("post_cont").style.marginLeft = "300px";
+                // document.getElementById("post_box").style.transform = "scale(0.5)";
+            }
+
+            else {
+                // document.getElementById("nav_menu").style.width = "0";
+                document.getElementById("post_cont").style.marginLeft = "0";
+                // document.getElementById("post_box").style.transform = "scale(1)";
+            }
         }
-        
-        else {
-            // document.getElementById("nav_menu").style.width = "0";
-            document.getElementById("post_cont").style.marginLeft = "0";
-            // document.getElementById("post_box").style.transform = "scale(1)";
-        }
-    })
+    }, [isXl])
 
     const portfolioLink = "https://sushantgangwar.netlify.app/";
     const githubLink = "https://github.com/sushantgwr87";
