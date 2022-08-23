@@ -24,7 +24,7 @@ const Post = () => {
 
     return (
         <div id='post_cont' className='posts_container'>
-            {postData.map((val, index) =>
+            {postData && postData.map((val, index) =>
                 <div id='post_box' className={`post ${!isXl && hoverShow.show && hoverShow.id === index && "post_user___show"}`} key={index} onMouseEnter={() => setHoverShow({ show: true, id: index })} onMouseLeave={() => setHoverShow({ show: false, id: null })}>
                     <div className='post_image'>
                         <img src={val.coverImageUrl} alt="" />
